@@ -1,22 +1,19 @@
 /*
-Declaracion de la INSTANCIA:
-DISPARAR
-JUGADOR
-ZOMBIES
+[Declaraciones de los Objetos]
+*fondo
+*jugador
+*planetas
 
-[SETUP]
-Declaracion de los OBJETOS y su CONSTRUCTORES:
-new DISPARAR
-new JUGADOR
-new ZOMBIES
+[Inicializar los Objetos en el Setup]
+Clases -----> Instancias
 
-[DRAW]
-Manifestar los OBJETOS
-(La clase Zombies, llevara parametros)
+[Draw]
+-Ejecucion de los metodos
+ *fondo.draw ();
+ *planeta.draw();
+ *jugador.draw();
 
-[EVENTOS MOUSE]
-El Jugador disparara la bala a los Zombies
-
-[EVENTOS TECLADO]
-El Jugador se movera en la pantalla
+[Eventos con el teclado] 
+-keyPressed ();
+ *Flecha izquierda y derecha para mover la Nave en el ejeX
 */
