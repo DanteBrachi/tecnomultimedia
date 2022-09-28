@@ -1,14 +1,27 @@
-/*
-[Propiedades para la clase]
-*Declaracion de la imagen para la nave y de su posicion en la pantalla
+class Nave {
+  PImage navecita;
+  float posX, posY;
 
-[Constructor de la clase]
-*Carga de la imagen y seteo de las coordenadas
+  Nave () {
+    navecita = loadImage ("navecita.png");
 
-[Metodo]
-*Dibujar la nave
+    posX = width/2;
+    posY = 350;
+  }
 
-[Funciones]
--Funcion para hacer movimiento a la izquierda
--Funcion para hacer movimiento a la derecha
-*/
+  void draw () {
+    pushStyle ();
+    image (navecita, posX, posY);
+    popStyle ();
+  }
+
+  void movimientoIzquierda () {
+    if (posX >= 20)
+      posX -= 8;
+  }
+
+  void movimientoDerecha () {
+    if (posX <= 380)
+      posX += 8;
+  }
+}

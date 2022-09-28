@@ -1,19 +1,35 @@
-/*
-[Propiedades para la clase]
--Declaracion de la imagen para los planetas y de su posicion en la pantalla
- *Se declaran las imagenes a modo de Arreglo
- *Se declara el indice para los cambios de imagenes
+class Planetas {
+  PImage [] planetas;
+  int indicePlanetas;
+  float posX, posY;
 
-[Constructor de la clase]
-*Seteo de las imagenes en un Ciclo FOR por medio del indice
--Seteo de las coordenadas de los planetas
- *Posicion en X de manera random (width)
- *Posicion en Y fuera de la pantalla (los planetas apareceran de arriba a abajo)
- 
-[Metodo]
-*Dibujar el planeta 
-*posY ++ para que se desplaze solo
+  Planetas () {
+    indicePlanetas = 0;
+    planetas = new PImage [3];
+    for (int i=0; i<3; i++) {
+      planetas [i] = loadImage (i+".png");
+    }
 
-*if de aparicion de las distintas imagenes de los planetas
-*if de reinicio de las imagenes para que se seteen de 0
-*/
+    posX = random (35, 365);
+    posY = -200;
+  }
+
+  void draw () {
+    pushStyle ();
+    fill (255, 0, 0);
+    image (planetas [indicePlanetas], posX, posY);
+    popStyle ();
+
+    posY += 1;
+
+    if (posY > width + 200) {
+      posX = random (35, 365);
+      posY = -200;
+      indicePlanetas ++;
+    }
+
+    if (indicePlanetas >= 3) {
+      indicePlanetas = 0;
+    }
+  }
+}

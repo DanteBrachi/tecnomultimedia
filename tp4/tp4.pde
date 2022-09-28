@@ -1,19 +1,18 @@
-/*
-[Declaraciones de los Objetos]
-*fondo
-*jugador
-*planetas
+//LINK AL VIDEO ------> https://youtu.be/oca4d4Ou1SM
 
-[Inicializar los Objetos en el Setup]
-Clases -----> Instancias
+espacioExterior espacio;
 
-[Draw]
--Ejecucion de los metodos
- *fondo.draw ();
- *planeta.draw();
- *jugador.draw();
+void setup () {
+  size (400, 400);
+  imageMode (CENTER);
+  
+  espacio = new espacioExterior ();
+}
 
-[Eventos con el teclado] 
--keyPressed ();
- *Flecha izquierda y derecha para mover la Nave en el ejeX
-*/
+void draw () {
+  espacio.draw ();
+}
+
+void keyPressed () {
+  espacio.eventosDeTeclado ();
+}
